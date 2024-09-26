@@ -9,9 +9,6 @@ import io.micrometer.common.lang.NonNull;
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
     public void addViewControllers(@NonNull ViewControllerRegistry registry){
-        registry.addViewController("/").setViewName("index");
-        registry.addViewController("/team").setViewName("team");
-        registry.addViewController("/external-url").setViewName("external-url");
-        registry.addViewController("/photos-gallery").setViewName("photos-gallery");
+        registry.addViewController("/external-urlView").setViewName("external-urlView");
     }
 }

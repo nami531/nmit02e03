@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../static/styles.css">
+    <link th:href="/styles.css">
 </head>
 <body>
     <ul th:fragment= "menu" >
         <li><a th:href="@{/}"> Home</a></li>
         <li><a th:href="@{/team}">Team</a></li>
-        <li><a th:href="@{/external-url}">External links</a></li>
+        <li><a th:href="@{/external-urlView}">External links</a></li>
         <li><a th:href="@{/photos-gallery}">Photos</a></li>    
     </ul>
 </body>
