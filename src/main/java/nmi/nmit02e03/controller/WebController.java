@@ -6,6 +6,9 @@ import java.util.HashMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -16,10 +19,18 @@ public class WebController {
 
     @GetMapping({"/index", " ", "/", "/home"})
     public String showIndex(Model model) {
-        model.addAttribute("year", LocalDate.now().getYear()); 
+        model.addAttribute("year", LocalDate.now().getYear());
         return "indexView";
     }
     
+    @GetMapping("/{user}")
+    public String showNameUse(Model model , @PathVariable String user) {
+        model.addAttribute("year", LocalDate.now().getYear());
+        model.addAttribute("user", user);
+        return "indexView";
+    }
+    
+
     @GetMapping("/team")
     public String showTeam(Model model) {
         achievements.put("Copa del Rey Runners-up", new String[] {"1947–48 (lost against Sevilla)", "1993–94 (lost against Real Zaragoza)", "2000–01 (lost against Real Zaragoza)"  }); 
